@@ -4,3 +4,4 @@ data "aws_vpc" "selected" {
    values = ["c10_learner_vpc"] # to be replaced with your VPC name
  }
 }
+

@@ -1,7 +1,7 @@
 resource "aws_instance" "public" {
-  ami                         = "ami-0e8ebb0ab254bb563" # find the AMI ID of Amazon Linux 2023  instance_type               = "t2.micro"
+  ami                         = var.ami_id # find the AMI ID of Amazon Linux 2023  instance_type               = "t2.micro"
   instance_type               = "t2.micro"
-  subnet_id                   = "subnet-0a61b179394ae66c8"  #Public Subnet ID, e.g. subnet-xxxxxxxxxxx
+  subnet_id                   = var.subnet_id  #Public Subnet ID, e.g. subnet-xxxxxxxxxxx
   associate_public_ip_address = true
   key_name                    = "laoniu-pem" #Change to your keyname, e.g. jazeel-key-pair
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
